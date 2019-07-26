@@ -6,6 +6,8 @@ from photogur.models import Picture, Comment
 #     return HttpResponseRedirect('')
 
 def pictures(request):
-    response = render(request, 'pictures.html')
+    pictures = Picture.objects.all() 
+    context = {'pictures': pictures}
+    response = render(request, 'pictures.html', context)
     return HttpResponse(response)
 
