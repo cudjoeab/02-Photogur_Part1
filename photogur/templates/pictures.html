@@ -9,7 +9,15 @@
 <body>
     <ul>
         {% for picture in pictures%}
-            <li> {{ pictures }} </li>
+            <li>    
+                <h4>{{ picture.title }} </h4> 
+                <img src="{{ picture.url }}" alt= "{{ picture.title }}">
+                <p> {{ picture.artist }} </p>
+                <p>
+                    {{ picture.comments.count }} Comments 
+                </p>
+            
+            </li>
         {% endfor %}
     </ul>
 </body>
